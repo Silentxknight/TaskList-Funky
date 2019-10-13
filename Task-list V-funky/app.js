@@ -79,9 +79,20 @@ localStorage.clear();
 
 //*Removing tasks
 function removeTasks(e){
+
   if(e.target.parentElement.classList.contains('close')){
-  
-  e.target.parentElement.parentElement.remove();
+  //---changing attributes for new style
+  e.target.parentElement.parentElement.style.backgroundColor="#d9ded7";
+  //method for saving text
+  let tex=e.target.parentElement.parentElement.innerHTML;
+  //method to change the format
+  e.target.parentElement.parentElement.innerHTML=`<del>`+tex+`</del>`;
+  //button text change
+  let con=document.querySelector(".close");
+  con.style.display="none";
+   
+ 
+  // e.target.parentElement.parentElement.remove();
   }
-  localStorage.removeItem(e.target.parentElement.parentElement)
+  // localStorage.removeItem(e.target.parentElement.parentElement)
 }
